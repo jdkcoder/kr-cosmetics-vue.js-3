@@ -25,6 +25,7 @@ export default {
 </script>
 <style scoped>
 nav {
+  white-space: nowrap;
   font-family: 'Leto Sans', sans-serif;
   position: absolute;
   top: 0rem;
@@ -53,5 +54,18 @@ nav a {
 nav a:hover {
   color: #dabb87;
   transition: color 0.4s;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav {
+    padding-top: 2rem;
+    padding-left: 3em;
+  }
+  nav img.logo {
+    height: 30px;
+    margin-right: 4em;
+  }
+  nav div.right-corner {
+    font-size: 1.4vw;
+  }
 }
 </style>

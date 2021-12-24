@@ -111,11 +111,11 @@ header::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-header img.bg-1 {
+/* header img.bg-1 {
   object-fit: cover;
   width: 100%;
   height: 100%;
-}
+} */
 .bg-1__text,
 .bg-1__sn,
 .bg-1__button {
@@ -128,7 +128,7 @@ header img.bg-1 {
 }
 .bg-1__text p.hero-text {
   font-family: 'Mordern H', sans-serif;
-  font-size: 5.25rem;
+  font-size: 5.5rem;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 0.9;
@@ -152,10 +152,11 @@ header img.bg-1 {
   -webkit-text-fill-color: transparent;
 }
 .bg-1__text p.normal-text {
-  margin-top: 2rem;
-  font-size: 1.15rem;
+  margin-top: 1.75rem;
+  font-size: 1rem;
   width: 19em;
   font-family: 'Leto Sans', sans-serif;
+  font-weight: 100;
 }
 .bg-1__button {
   left: 9.5rem;
@@ -171,7 +172,6 @@ header img.bg-1 {
   border-radius: 50%;
   box-shadow: 0 0 0 1px #f0f0f0;
   white-space: nowrap;
-  transform: scale(0.7);
 }
 .bg-1__button button::before {
   content: url('https://i.imgur.com/OsT4QCf.png');
@@ -208,8 +208,57 @@ header svg#Twitter {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-.show {
-  opacity: 1;
-  transform: translateX(0);
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    height: 40vh;
+  }
+  header::after {
+    font-size: 2vw;
+    left: 3rem !important;
+    bottom: 1.5rem;
+  }
+  .bg-1__sn {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+  .bg-1__sn > * + * {
+    margin-left: 1.5vw;
+  }
+  header svg {
+    height: 2.4vw;
+    width: 2.4vw;
+  }
+  header::after,
+  .bg-1__text {
+    left: 3em;
+  }
+  .bg-1__text {
+    width: 50%;
+  }
+  .bg-1__text p.hero-text {
+    font-size: 5vw;
+  }
+  .bg-1__text p.normal-text {
+    margin-top: 1rem;
+    font-size: 1.6vw;
+  }
+  .bg-1__button {
+    left: 3em;
+    top: 75%;
+  }
+  .bg-1__button button {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .bg-1__button button::after {
+    top: 20%;
+    font-size: 0.75rem;
+    left: 4rem;
+  }
+  .bg-1__button button::before {
+    content: url('https://i.imgur.com/JrcAvGH.png');
+    top: 0.125rem;
+    left: 0.75rem;
+  }
 }
 </style>

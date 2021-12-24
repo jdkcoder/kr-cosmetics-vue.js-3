@@ -25,6 +25,8 @@ html {
   color: #fff;
   overflow-x: hidden;
   user-select: none;
+  height: 100%;
+  width: 100%;
 }
 
 a {

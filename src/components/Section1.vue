@@ -23,7 +23,7 @@
             data-aos-easing="linear"
           >
             Seoul beauty is about finding one's natural beauty that lies deeply
-            in having a strong <span>inner sense of confidence</span> and
+            in having a strong <span>inner sense of confidence</span> <br />and
             bringing it out to shine - This is the philosophy of HERA.
           </p>
         </div>
@@ -110,11 +110,43 @@ p.md-text,
 p.sm-text {
   margin: 1rem 0 0 1rem;
 }
-
+p.sm-text > span {
+  font-family: 'Leto Sans Condensed', sans-serif;
+  font-weight: 300;
+}
 div.left > * {
   position: absolute;
   top: calc(100% - 50rem);
   right: calc(100% - 51.5rem);
   z-index: 2;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  section#s1 {
+    padding: 0.5vw 0;
+    display: inline-block;
+  }
+  div.img > img {
+    width: 100% !important;
+    margin: 0;
+  }
+  div.left > * {
+    top: 14%;
+    left: 26%;
+  }
+  p.hero-text {
+    font-size: 10.8vw;
+    letter-spacing: -0.6rem;
+  }
+
+  p.md-text {
+    font-size: 2.09vw !important;
+    letter-spacing: -0.125rem;
+    font-weight: 200;
+    margin-left: 1vw;
+  }
+  p.sm-text {
+    margin-left: 1vw;
+    font-size: 1.04vw !important;
+  }
 }
 </style>

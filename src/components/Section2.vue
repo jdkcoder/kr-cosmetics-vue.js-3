@@ -18,7 +18,7 @@
           <p class="secondary">24-hour coverage for a chic semi-matte look</p>
         </div>
       </div>
-      <div class="line-sub" data-aos="fade-up" data-aos-duration="1200">
+      <!-- <div class="line-sub" data-aos="fade-up" data-aos-duration="1200">
         <img
           src="https://pbs.twimg.com/media/D1crJLzUcAAqEHq?format=jpg&name=large"
         />
@@ -35,7 +35,7 @@
           <p class="primary">for him</p>
           <p class="secondary">The moment your signature presence</p>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -151,5 +151,77 @@ div.header {
   display: flex;
   justify-content: space-between;
   width: calc(100% - 28em);
+}
+div.lines {
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .s2__button {
+    align-self: unset;
+    margin: 1.6vw 0 0 90%;
+  }
+  .s2__button button::before {
+    content: url('https://i.imgur.com/noQEjsN.png');
+    top: 26%;
+    left: 45%;
+  }
+  .s2__button button::after {
+    font-size: 1.6vw;
+    top: 32%;
+    left: 5.5rem;
+  }
+  div.lines {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  div.line-sub {
+    display: flex;
+    width: calc(100vw - 70%) !important;
+    flex-direction: row-reverse;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 1024px) {
+  section#s2 {
+    padding-top: 5vw;
+    padding-left: 3rem;
+  }
+  div.title {
+    font-size: 6vw;
+  }
+  div.title > p {
+    letter-spacing: -0.75vw;
+  }
+  .s2__button {
+    align-self: unset;
+    margin: 1.6vw 0 0 70%;
+  }
+  .s2__button button {
+    height: 6vw;
+    width: 6vw;
+  }
+  .s2__button button::before {
+    top: 32%;
+    left: 45%;
+  }
+  .s2__button button::after {
+    font-size: 1.6vw;
+    top: 32%;
+    left: 7.75rem;
+  }
+  div.line-sub {
+    display: flex;
+    width: calc(100vw - 60%) !important;
+    flex-direction: row-reverse;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  div.line-sub > * + * {
+    margin-right: 2.5rem;
+  }
 }
 </style>
