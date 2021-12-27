@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <section id="footer" class="footer">
     <div class="top">
       <img
         src="https://i.imgur.com/BYyTg0N.png"
@@ -54,20 +54,24 @@
       </div>
     </div>
     <div class="under-top">
-      <div v-for="(link, index) in links" :key="index" class="links">
-        <h3 data-aos="zoom-in" data-aos-duration="800">{{ link.big }}</h3>
-        <p data-aos="fade-down" data-aos-duration="1000">{{ link.s1 }}</p>
-        <p data-aos="fade-down" data-aos-duration="1200">{{ link.s2 }}</p>
-        <p data-aos="fade-down" data-aos-duration="1400">{{ link.s3 }}</p>
+      <div class="links">
+        <div v-for="(link, index) in links" :key="index">
+          <h3 data-aos="zoom-in" data-aos-duration="800">{{ link.big }}</h3>
+          <div class="link-item">
+            <p data-aos="fade-down" data-aos-duration="1000">{{ link.s1 }}</p>
+            <p data-aos="fade-down" data-aos-duration="1200">{{ link.s2 }}</p>
+            <p data-aos="fade-down" data-aos-duration="1400">{{ link.s3 }}</p>
+          </div>
+        </div>
       </div>
-      <div v-for="(contactInfo, index) in contact">
+       <div v-for="(contactInfo, index) in contact" :key="index" class="contact">
         <h3 data-aos="zoom-in" data-aos-duration="800">
           {{ contactInfo.title }}
         </h3>
         <p class="address" data-aos="zoom-in" data-aos-duration="800">
           {{ contactInfo.address }}
         </p>
-        <p data-aos="zoom-out" data-aos-duration="1200">
+        <p class="phone" data-aos="zoom-out" data-aos-duration="1200">
           {{ contactInfo.phone }}
         </p>
       </div>
@@ -78,44 +82,44 @@
         <button type="submit" data-aos="fade" data-aos-duration="2000"></button>
       </form>
     </div>
-  </footer>
+  </section>
 </template>
 <script>
 export default {
-  name: 'Footer',
+  name: "section.footer",
   data() {
     return {
       links: [
         {
-          big: 'hera story',
-          s1: 'Brande story',
-          s2: 'Hera story',
-          s3: 'Library',
+          big: "hera story",
+          s1: "Brande story",
+          s2: "Hera story",
+          s3: "Library",
         },
         {
-          big: 'makeup',
-          s1: 'Face',
-          s2: 'Lips',
-          s3: 'Eyes',
+          big: "makeup",
+          s1: "Face",
+          s2: "Lips",
+          s3: "Eyes",
         },
         {
-          big: 'skincare',
-          s1: 'Product line',
-          s2: 'Skin concept',
-          s3: 'Product tupe',
+          big: "skincare",
+          s1: "Product line",
+          s2: "Skin concept",
+          s3: "Product tupe",
         },
         {
-          big: 'fragrance',
-          s1: 'Product line',
-          s2: 'Product tupe',
-          s3: '',
+          big: "fragrance",
+          s1: "Product line",
+          s2: "Product tupe",
+          s3: "",
         },
       ],
       contact: [
         {
-          title: 'contact',
-          address: '7 lewis circle ste 814482 willmington, 19804-1618 usa.',
-          phone: '(484) 5400190',
+          title: "contact",
+          address: "7 lewis circle ste 814482 willmington, 19804-1618 usa.",
+          phone: "(484) 5400190",
         },
       ],
     };
@@ -123,34 +127,35 @@ export default {
 };
 </script>
 <style scoped>
-footer {
-  font-family: 'Leto Sans';
-  width: 100vw;
-  height: 400px;
+section.footer {
+  font-family: "Leto Sans";
+  height: 500px;
   background: #950000;
-  padding: 3rem 0 4rem 10rem;
+  padding-top: 2.5rem;
   color: #deb3af;
 }
-div.top {
+div.links {
   display: flex;
-  justify-content: space-between;
-  width: calc(100vw - 22em);
+  margin:0 2.5rem 0 9rem;
 }
 img.logo-footer {
   height: 60px;
   align-self: center;
+  margin-left: 9rem;
 }
-footer svg {
+section.footer svg {
   height: 2rem;
   width: 2rem;
 }
 div.sn {
   align-self: center;
+  text-align:center;
 }
 div.sn > * + * {
   margin-left: 1.5rem;
 }
 span.hera {
+    text-align: center;
   font-weight: 400;
   font-size: 8rem;
   background: #870505;
@@ -178,10 +183,14 @@ span.hera {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+ div.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 div.under-top {
   display: flex;
 }
-div.under-top > * + * {
+div.links  > * + * {
   margin-left: 2.5rem;
 }
 div.under-top h3 {
@@ -199,17 +208,17 @@ div.under-top p.address {
   width: 8em;
 }
 div.bottom-right {
-  width: calc(100vw - 22em);
+  width: 100%;
   position: relative;
-  height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 4rem!important;
 }
 div.bottom-right > * {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  margin-right: 2rem;
 }
 div.bottom-right input {
-  font-family: 'Leto Sans';
+  font-family: "Leto Sans";
   background: transparent;
   color: #deb3af !important;
   border: none;
@@ -238,27 +247,78 @@ div.bottom-right button {
   background: transparent;
   outline: none;
   border: none;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #deb3af;
   white-space: nowrap;
-  transform: scale(0.55) !important;
+  position: relative;
 }
 div.bottom-right button::before {
-  content: url('https://i.imgur.com/MeAQQSN.png');
+  content: url("https://i.imgur.com/noQEjsN.png");
   position: absolute;
-  top: 2rem;
-  left: 2.75rem;
+  top: 30%;
+  left: 50%;
 }
 div.bottom-right button::after {
-  content: 'Send';
+  content: "Send";
   position: absolute;
-  top: 1.9rem;
-  left: 9rem;
+  top: 33%;
+  right: -125%;
+  transform: translateX(20%);
   color: #deb3af;
-  font-size: 1.25rem;
-  font-family: 'Leto Sans', sans-serif;
+  font-size: 1rem;
+  font-family: "Leto Sans", sans-serif;
   font-weight: 100;
+  letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  section.footer {
+    height:500px!important;
+  }
+  img.logo-footer,
+  div.links {
+    margin: 0 0 0 4rem;
+  }
+  img.logo-footer {
+    height: 46px;
+  }
+  span.hera {
+    font-size: 5rem;
+  }
+  section.footer svg {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+  div.sn {
+    text-align: center;
+    margin: 0;
+  }
+ 
+  div.under-top {
+    display:grid;
+  }
+  div.contact h3 {
+    display:none;
+  }
+  div.contact {
+    display:flex;
+    font-style: italic!important;
+    flex-direction: column;
+  }
+  div.under-top p.address {
+    width:100%;
+    margin-left:4rem;
+    margin-top:2rem;
+  }
+  div.under-top p.phone {
+    margin-left:4rem!important
+  }
+}
+@media screen and (max-width: 1024px)and (orientation: portrait)  {
+div.bottom-right {
+    margin-top: 5.5rem;
+  }
 }
 </style>

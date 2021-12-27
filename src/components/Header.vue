@@ -1,6 +1,6 @@
 <template>
-  <header data-aos="fade" data-aos-duration="1000">
-    <!-- <img src="https://i.imgur.com/XgZxSDt.png" class="bg-1" /> -->
+  <section  id="header" class="header" data-aos="fade" data-aos-duration="1000">
+    <img src="https://i.imgur.com/xAPntcZ.png" class="jennie" />
     <Nav />
     <div class="bg-1__text">
       <p
@@ -69,12 +69,12 @@
         </g>
       </svg>
     </div>
-  </header>
+  </section>
 </template>
 <script>
-import Nav from './Nav.vue';
+import Nav from "./Nav.vue";
 export default {
-  name: 'Header',
+  name: "Header",
   components: {
     Nav,
   },
@@ -85,20 +85,25 @@ export default {
 };
 </script>
 <style scoped>
-header {
-  background: #242a2a url('https://i.imgur.com/XgZxSDt.png');
+.jennie {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+}
+section.header {
+  background: #242a2a;
   width: 100%;
-  height: 100vh;
+  height: 810px;
   user-select: none;
-
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-header::after {
-  font-family: 'Mordern H Bold', sans-serif;
-  content: 'W';
+section.header::after {
+  font-family: "Modern H Bold", sans-serif;
+  content: "W";
   position: absolute;
   bottom: 4rem;
   left: 10rem;
@@ -111,11 +116,6 @@ header::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* header img.bg-1 {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-} */
 .bg-1__text,
 .bg-1__sn,
 .bg-1__button {
@@ -127,7 +127,7 @@ header::after {
   width: 55em;
 }
 .bg-1__text p.hero-text {
-  font-family: 'Mordern H', sans-serif;
+  font-family: "Modern H", sans-serif;
   font-size: 5.5rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -155,38 +155,40 @@ header::after {
   margin-top: 1.75rem;
   font-size: 1rem;
   width: 19em;
-  font-family: 'Leto Sans', sans-serif;
+  font-family: "Leto Sans", sans-serif;
   font-weight: 100;
 }
 .bg-1__button {
   left: 9.5rem;
-  top: 71%;
+  top: 75%;
 }
 
 .bg-1__button button {
   background: transparent;
   outline: none;
   border: none;
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #f0f0f0;
   white-space: nowrap;
 }
 .bg-1__button button::before {
-  content: url('https://i.imgur.com/OsT4QCf.png');
+  content: url("https://i.imgur.com/OsT4QCf.png");
   position: absolute;
-  top: 2rem;
-  left: 2.75rem;
+  top: 27%;
+  left: 50%;
 }
 .bg-1__button button::after {
-  content: 'Go to catalog';
+  content: "Go to catalog";
   position: absolute;
-  top: 2.25rem;
-  left: 9rem;
+  top: 30%;
+  left: 100%;
+  transform: translateX(55%);
   color: #f0f0f0;
   font-size: 1rem;
-  font-family: 'Leto Sans', sans-serif;
+  font-family: "Leto Sans", sans-serif;
+  font-weight: 100;
 }
 .bg-1__sn {
   bottom: 4rem;
@@ -197,38 +199,34 @@ header::after {
 .bg-1__sn > * + * {
   margin-left: 1rem;
 }
-header svg {
+section.header svg {
   height: 2rem;
   width: 2rem;
   fill: #f0f0f0;
 }
-header svg#Twitter {
+section.header svg#Twitter {
   fill: none;
   stroke: #f0f0f0;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  header {
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  section.header {
     height: 40vh;
   }
-  header::after {
+  section.header::after {
     font-size: 2vw;
     left: 3rem !important;
     bottom: 1.5rem;
   }
-  .bg-1__sn {
-    bottom: 1.5rem;
-    right: 1rem;
-  }
   .bg-1__sn > * + * {
     margin-left: 1.5vw;
   }
-  header svg {
+  section.header svg {
     height: 2.4vw;
     width: 2.4vw;
   }
-  header::after,
+  section.header::after,
   .bg-1__text {
     left: 3em;
   }
@@ -253,12 +251,69 @@ header svg#Twitter {
   .bg-1__button button::after {
     top: 20%;
     font-size: 0.75rem;
-    left: 4rem;
+    transform: translateX(45%);
   }
   .bg-1__button button::before {
-    content: url('https://i.imgur.com/JrcAvGH.png');
-    top: 0.125rem;
-    left: 0.75rem;
+    content: url("https://i.imgur.com/JrcAvGH.png");
+    top: 7%;
+    left: 35%;
+  }
+  .bg-1__sn {
+    bottom:1rem;
+    right: 2rem!important;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  section.header {
+    height: 40vh;
+  }
+  section.header::after {
+    font-size: 2vw;
+    left: 3rem !important;
+    bottom: 1.5rem;
+  }
+  .bg-1__sn > * + * {
+    margin-left: 1.5vw;
+  }
+  section.header svg {
+    height: 2.4vw;
+    width: 2.4vw;
+  }
+  section.header::after,
+  .bg-1__text {
+    left: 3em;
+  }
+  .bg-1__text {
+    width: 50%;
+  }
+  .bg-1__text p.hero-text {
+    font-size: 5vw;
+  }
+  .bg-1__text p.normal-text {
+    margin-top: 1rem;
+    font-size: 1.6vw;
+  }
+  .bg-1__button {
+    left: 3em;
+    top: 75%;
+  }
+  .bg-1__button button {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .bg-1__button button::after {
+    top: 20%;
+    font-size: 0.75rem;
+    transform: translateX(45%);
+  }
+  .bg-1__button button::before {
+    content: url("https://i.imgur.com/JrcAvGH.png");
+    top: 7%;
+    left: 35%;
+  }
+  .bg-1__sn {
+    bottom:1.5rem;
+    right:3rem!important;
   }
 }
 </style>

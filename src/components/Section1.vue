@@ -42,22 +42,22 @@
 section#s1 {
   background: #f0f0f0;
   color: #303030;
-  padding: 2rem 0;
   display: grid;
   place-items: center;
 }
 
 div.content {
-  width: calc(100vw - 8rem);
+  width: max-content;
   height: 100%;
   display: flex;
   align-items: center;
   position: relative;
 }
 div.img {
-  width: 60%;
+  width: 55%;
   height: 100%;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   filter: brightness(70%);
   transition: all 0.4s;
@@ -67,28 +67,31 @@ section#s1:hover div.img {
   transition: all 0.4s;
 }
 div.img > img {
-  aspect-ratio: 12/10.5;
+  height: 75vh;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  margin-left: 5em;
 }
 div.left {
-  width: 40%;
+  width: 45%;
   height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 1rem;
 }
 p.hero-text,
 p.md-text {
   text-transform: uppercase;
 }
 p.hero-text {
-  font-family: 'Leto Sans', sans-serif;
-  font-size: 13rem;
+  font-family: "Leto Sans", sans-serif;
+  font-size: 10vw;
   line-height: 0.75;
   letter-spacing: -1rem;
 }
 p.md-text {
   letter-spacing: -4px;
-  font-size: 2.5rem;
+  font-size: 2rem;
   word-spacing: 0px;
   font-weight: 200;
 }
@@ -96,46 +99,38 @@ p.md-text,
 p.sm-text,
 p.sm-text-inner {
   font-weight: 100;
-  font-family: 'Leto Sans', sans-serif;
+  font-family: "Leto Sans", sans-serif;
 }
 p.sm-text {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   width: 23em;
-  font-size: 1.25rem;
-}
-p.sm-text-inner {
-  width: 70%;
+  font-size: 1vw;
 }
 p.md-text,
 p.sm-text {
   margin: 1rem 0 0 1rem;
 }
 p.sm-text > span {
-  font-family: 'Leto Sans Condensed', sans-serif;
+  font-family: "Leto Sans Condensed", sans-serif;
   font-weight: 300;
 }
-div.left > * {
-  position: absolute;
-  top: calc(100% - 50rem);
-  right: calc(100% - 51.5rem);
-  z-index: 2;
-}
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
   section#s1 {
-    padding: 0.5vw 0;
+    height: 60vh;
     display: inline-block;
   }
   div.img > img {
-    width: 100% !important;
-    margin: 0;
+    height: 51%;
   }
-  div.left > * {
-    top: 14%;
-    left: 26%;
+
+  div.content {
+    width: 100%;
+    margin-top: -3.5vh;
   }
   p.hero-text {
-    font-size: 10.8vw;
-    letter-spacing: -0.6rem;
+    font-size: 8vw;
+    letter-spacing: -0.4rem;
   }
 
   p.md-text {
@@ -146,7 +141,37 @@ div.left > * {
   }
   p.sm-text {
     margin-left: 1vw;
-    font-size: 1.04vw !important;
+    font-size: 1.6vw !important;
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  section#s1 {
+    height: 60vh;
+    display: inline-block;
+  }
+  div.img > img {
+    height: 51%;
+  }
+
+  div.content {
+    width: 100%;
+    margin-top: -3.5vh;
+  }
+  p.hero-text {
+    font-size: 8vw;
+    letter-spacing: -0.4rem;
+  }
+
+  p.md-text {
+    font-size: 2.09vw !important;
+    letter-spacing: -0.125rem;
+    font-weight: 200;
+    margin-left: 1vw;
+  }
+  p.sm-text {
+    margin-left: 1vw;
+    font-size: 1.6vw !important;
   }
 }
 </style>
